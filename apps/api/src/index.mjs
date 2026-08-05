@@ -1,0 +1,1 @@
+export function describeApi() { return { product: "evento-globolo", purpose: "A global event automation platform that turns one event brief into listings, ticketing, reminders, social posts, and partner-ready analytics.", routes: ['/healthz', '/api/config', '/api/events', '/api/leads', '/api/alerts'] }; }

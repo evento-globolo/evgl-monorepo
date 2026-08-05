@@ -1,0 +1,9 @@
+[package]
+name = "evgl-control-plane"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Repository-family control plane for Evento Globolo"
+
+[dependencies]
+evgl-catalog = { path = "../../packages/catalog" }

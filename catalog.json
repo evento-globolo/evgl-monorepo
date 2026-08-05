@@ -1,0 +1,52 @@
+{
+  "org": "evento-globolo",
+  "brand": "Evento Globolo",
+  "repos": {
+    "clients": "evento-globolo/evgl-clients",
+    "libs": "evento-globolo/evgl-libs",
+    "monorepo": "evento-globolo/evgl-monorepo",
+    "infra": "evento-globolo/evgl-infra",
+    "marketing": "evento-globolo/evento-globolo.github.io"
+  },
+  "apps": [
+    "api",
+    "web",
+    "ops-console",
+    "control-plane"
+  ],
+  "packages": [
+    "contracts",
+    "ui",
+    "testkit",
+    "catalog"
+  ],
+  "repositories": [
+    "evgl-interfaces",
+    "evgl-api",
+    "evgl-mash-web",
+    "evgl-leptos-web",
+    "evgl-dioxus-web",
+    "evgl-cli",
+    "evgl-sync",
+    "evgl-infra",
+    "evgl-clients",
+    "evgl-libs",
+    "evento-globolo.github.io"
+  ],
+  "capabilities": [
+    "event-catalog",
+    "cross-posting",
+    "webhooks",
+    "oauth-connections",
+    "events",
+    "audit"
+  ],
+  "integrations": [
+    "Meta/Facebook Events",
+    "Eventbrite",
+    "Meetup",
+    "Craigslist",
+    "LinkedIn Events",
+    "Calendar feeds"
+  ]
+}
