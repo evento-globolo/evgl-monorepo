@@ -1,0 +1,40 @@
+[submodule "services/api"]
+  path = services/api
+  url = https://github.com/evento-globolo/evgl-api.git
+  ignore = all
+[submodule "services/sync"]
+  path = services/sync
+  url = https://github.com/evento-globolo/evgl-sync.git
+  ignore = all
+[submodule "apps/mash"]
+  path = apps/mash
+  url = https://github.com/evento-globolo/evgl-web-mash.git
+  ignore = all
+[submodule "apps/leptos"]
+  path = apps/leptos
+  url = https://github.com/evento-globolo/evgl-web-leptos.git
+  ignore = all
+[submodule "apps/dioxus"]
+  path = apps/dioxus
+  url = https://github.com/evento-globolo/evgl-web-dioxus.git
+  ignore = all
+[submodule "packages/libs"]
+  path = packages/libs
+  url = https://github.com/evento-globolo/evgl-libs.git
+  ignore = all
+[submodule "packages/clients"]
+  path = packages/clients
+  url = https://github.com/evento-globolo/evgl-clients.git
+  ignore = all
+[submodule "contracts"]
+  path = contracts
+  url = https://github.com/evento-globolo/evgl-interfaces.git
+  ignore = all
+[submodule "infra"]
+  path = infra
+  url = https://github.com/evento-globolo/evgl-infra.git
+  ignore = all
+[submodule "tools/cli"]
+  path = tools/cli
+  url = https://github.com/evento-globolo/evgl-cli.git
+  ignore = all
