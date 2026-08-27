@@ -1,0 +1,4 @@
+[submodule "apps/evgl-sidecar.rs"]
+	path = apps/evgl-sidecar.rs
+	url = https://github.com/evento-globolo/evgl-sidecar.rs.git
+	branch = main
