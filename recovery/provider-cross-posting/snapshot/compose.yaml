@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: evgl
+      POSTGRES_PASSWORD: evgl
+      POSTGRES_DB: evgl
+    ports: ["5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evgl"]
+      interval: 3s
+      timeout: 2s
+      retries: 20
+
+  api:
+    build: services/api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      APP_BIND: 0.0.0.0:8080
+      APP_PUBLIC_URL: http://localhost:8080
+      APP_WEB_URL: http://localhost:3000
+      DATABASE_URL: postgres://evgl:evgl@postgres:5432/evgl
+      JWT_SECRET: ${JWT_SECRET}
+      TOKEN_VAULT_KEY: ${TOKEN_VAULT_KEY}
+      EVENTBRITE_CLIENT_ID: ${EVENTBRITE_CLIENT_ID:-}
+      EVENTBRITE_CLIENT_SECRET: ${EVENTBRITE_CLIENT_SECRET:-}
+      EVENTBRITE_REDIRECT_URI: http://localhost:8080/v1/oauth/eventbrite/callback
+      MEETUP_CLIENT_ID: ${MEETUP_CLIENT_ID:-}
+      MEETUP_CLIENT_SECRET: ${MEETUP_CLIENT_SECRET:-}
+      MEETUP_REDIRECT_URI: http://localhost:8080/v1/oauth/meetup/callback
+      META_CLIENT_ID: ${META_CLIENT_ID:-}
+      META_CLIENT_SECRET: ${META_CLIENT_SECRET:-}
+      META_REDIRECT_URI: http://localhost:8080/v1/oauth/meta_facebook_page/callback
+    ports: ["8080:8080"]
+
+  mash:
+    build: apps/mash
+    depends_on: [api]
+    environment:
+      APP_BIND: 0.0.0.0:3000
+      EVGL_API_URL: http://api:8080
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY}
+      WEB_DATABASE_URL: postgres://evgl:evgl@postgres:5432/evgl
+      COOKIE_SECURE: "false"
+    ports: ["3000:3000"]
